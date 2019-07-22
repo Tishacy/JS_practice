@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        Rock Paper Scissors
+    </header>
+
+    <div class="main">
+        <div class="result-box">
+            <div class="user-tag">user</div>
+            <div class="computer-tag">comp</div>
+            <span class="user-score">0</span> : <span class="computer-score">0</span>
+        </div>
+        <p class="description">Let's play the game...</p>
+        <div class="choices">
+            <img src="./images/rock.png" class="rock choice" alt="">
+            <img src="./images/paper.png" class="paper choice" alt="">
+            <img src="./images/scissors.png" class="scissors choice" alt="">
+        </div>
+        <p class="footer">Make your move.</p>
+    </div>
+    <div class="audios">
+        <audio src="./media/win.mp3" class="win-audio"></audio>
+        <audio src="./media/lose.mp3" class="lose-audio"></audio>
+        <audio src="./media/draw.mp3" class="draw-audio"></audio>
+    </div>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
