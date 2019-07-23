@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag and limit drag</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            border: 4px solid #123512;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #777;
+            box-shadow: 0 0 15px #333;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 100px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box global-drag" style="position: absolute; left: 100px; top: 100px">Global Drag</div>
+        <div class="box limit-drag" style="position: absolute; right: 100px; top: 100px">Limit Drag</div>
+    </div>
+    <script>
+
+        class Drag{
+            constructor(className) {
+                this.box = document.getElementsByClassName(className)[0];
+                this.init();
+            }
+            init() {
+                this.box.addEventListener('mousedown', (e)=>{
+                    e = e || window.event;
+                    this.distX = e.clientX - this.box.offsetLeft;
+                    this.distY = e.clientY - this.box.offsetTop;
+
+                    document.onmousemove = this.onMouseMove.bind(this);
+                    document.onmouseup = this.onMouseUp.bind(this);
+                }, false);
+            }
+            onMouseMove(e) {
+                e = e || window.event;
+                this.box.style.left = e.clientX - this.distX + "px";
+                this.box.style.top = e.clientY - this.distY + "px";
+            }
+            onMouseUp(e) {
+                document.onmousemove = null;
+                document.onmouseup = null;
+                console.log('aaaa');
+            }
+        }
+
+        class LimitDrag extends Drag{
+            constructor(dragBoxClassName, limitBoxClassName){
+                super(dragBoxClassName);
+                this.limitBox = document.getElementsByClassName(limitBoxClassName)[0];
+                this.limitBoxComputedStyle = getComputedStyle(this.limitBox, null);
+                this.limitLeft = 0;
+                this.limitTop = 0;
+                this.limitRight = this.limitBox.offsetWidth - this.box.offsetWidth - parseInt(this.limitBoxComputedStyle.borderWidth) * 2;
+                this.limitBottom = this.limitBox.offsetHeight - this.box.offsetHeight - parseInt(this.limitBoxComputedStyle.borderWidth) * 2;
+            }
+            onMouseMove(e) {
+                e = e || window.event;
+                super.onMouseMove();
+                if (this.box.offsetLeft < this.limitLeft) {
+                    this.box.style.left = 0;
+                }
+                if (this.box.offsetTop < this.limitTop) {
+                    this.box.style.top = 0;
+                }
+                if (this.box.offsetLeft > this.limitRight) {
+                    this.box.style.left = this.limitRight + "px";
+                }
+                if (this.box.offsetTop > this.limitBottom) {
+                    this.box.style.top = this.limitBottom + "px";
+                }
+            }
+        }
+
+        let dragBox = new Drag('global-drag');
+        let limitDragBox = new LimitDrag('limit-drag', 'container')
+    </script>
+</body>
+</html>
