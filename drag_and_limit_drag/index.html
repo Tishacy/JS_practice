@@ -12,8 +12,8 @@
         }
         .container {
             position: relative;
-            width: 600px;
-            height: 600px;
+            width: 500px;
+            height: 500px;
             margin: 50px auto;
             border: 4px solid #123512;
         }
@@ -37,7 +37,9 @@
         <div class="box limit-drag" style="position: absolute; right: 100px; top: 100px">Limit Drag</div>
     </div>
     <script>
-
+        document.onselectstart = function(){
+            return false;
+        }
         class Drag{
             constructor(className) {
                 this.box = document.getElementsByClassName(className)[0];
@@ -93,8 +95,8 @@
             }
         }
 
-        let dragBox = new Drag('global-drag');
-        let limitDragBox = new LimitDrag('limit-drag', 'container')
+        let globalDragBox = new Drag('global-drag');
+        let limitDragBox = new LimitDrag('limit-drag', 'container');
     </script>
 </body>
 </html>
