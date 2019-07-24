@@ -37,12 +37,11 @@
         <div class="box limit-drag" style="position: absolute; right: 100px; top: 100px">Limit Drag</div>
     </div>
     <script>
-        document.onselectstart = function(){
-            return false;
-        }
+
         class Drag{
             constructor(className) {
                 this.box = document.getElementsByClassName(className)[0];
+                this.box.onselectstart = ()=>false;
                 this.init();
             }
             init() {
