@@ -1,0 +1,35 @@
+* {
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.empty {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    /* border: 3px solid #aaa; */
+    box-shadow: 0 0 15px #aaa;
+}
+
+.fill {
+    width: 130px;
+    height: 130px;
+    background: url('./images/fill.jpg');
+    background-size: 100% 100%;
+
+}
+
+.hold {
+    border: 1px solid #cc926c;
+}
+
+.invisible {
+    display: none;
+}
+
+.dragHover {
+    background-color: #eee;
+}
