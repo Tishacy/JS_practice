@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    background: #333;
+}
+header {
+    width: 100%;
+    height: 4.5rem;
+    /* background-color: #f00; */
+    /* border: 1px solid red; */
+}
+header .logo {
+    float: left;
+    font-size: 2rem;
+    line-height: 4.5rem;
+    margin-left: 2rem;
+    color: #fff;
+    opacity: 0.5;
+}
+header .logo:hover {
+    opacity: 1;
+}
+header .right {
+    float: right;
+    font-size: 1.5rem;
+    line-height: 4.5rem;
+    margin-right: 2rem;
+}
+header .right a {
+    color: #fff;
+    opacity: 0.5;
+    margin: 0 .3rem;
+}
+header .right a:hover {
+    opacity: 1;
+}
+
+section {
+    width: 100%;
+    height: 46rem;
+    /* background-color: #333; */
+    border: 1px solid black;
+}
+section .content {
+    min-width: 70rem;
+    width: 80%;
+    height: 100%;
+    border: 1px solid green;
+    margin: 0 auto;
+}
+section .content .content-left {
+    width: 66%;
+    height: 100%;
+    float: left;
+    /* border: 1px solid red; */
+    background-color: #333;
+}
+section .content .content-left .toolbar {
+    width: 100%;
+    height: 5rem;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.toolbar .button {
+    width: 18%;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.toolbar .button span {
+    font-size: 1.3rem;
+    line-height: 3rem;
+    opacity: 0.5;
+}
+.toolbar .button .icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -.5rem;
+    margin-right: .3rem;
+    background-color: #fff;
+}
+.toolbar .button:hover {
+    border-color: rgba(255,255,255,0.5);
+}
+.toolbar .button:hover span {
+    opacity: 0.8;
+}
+
+section .content-list {
+
+}
+section .content-list .content-item {
+    width: 100%;
+    height: 5rem;
+    background-color: #222;
+    font-size: 1.6rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-sizing: border-box;
+}
+section .content-list .content-item div{
+    float: left;
+    color: #fff;
+    opacity: 0.5;
+    line-height: 5rem;
+}
+
+section .content-list .content-item .item-check {
+    width: 5rem;
+    height: 100%;
+    /* background-color: #000; */
+    text-align: center;
+}
+section .content-list .content-item .item-check i{
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 1px solid rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+section .content-list .content-item .item-check i:hover{
+    border-color: #fff;
+}
+
+section .content-list .content-item .item-number {
+    width: 2rem;
+    height: 100%;
+    /* background-color: #333; */
+}
+section .content-list .content-item .item-name {
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    position: relative;
+}
+.item-name .item-menu {
+    border: 1px solid black;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+section .content-list .content-item .item-singer {
+    width: 20%;
+    height: 100%;
+    /* background-color: #333; */
+}
+
+
+section .content .content-right {
+    width: 34%;
+    height: 100%;
+    float: right;
+    background-color: #777;
+}
+
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6rem;
+    background-color: #000;
+}
+footer .footer-content {
+    width: 80%;
+    height: 100%;
+    border: 1px solid red;
+    margin: 0 auto;
+}
