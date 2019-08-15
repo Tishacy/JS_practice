@@ -10,43 +10,47 @@ html, body {
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
     background: #333;
+    transition: .2s ease-in-out;
 }
 header {
     width: 100%;
-    height: 4.5rem;
-    /* background-color: #f00; */
-    /* border: 1px solid red; */
+    height: 6.5rem;
 }
 header .logo {
     float: left;
-    font-size: 2rem;
-    line-height: 4.5rem;
+    font-size: 2.4rem;
+    line-height: 6.5rem;
     margin-left: 2rem;
+    padding-left: 6.5rem;
     color: #fff;
+    background: url(../images/qq-music-logo.png) no-repeat ;
+    background-size: contain;
     opacity: 0.5;
 }
 header .logo:hover {
-    opacity: 1;
+    opacity: .8;
+    transition: .2s all;
 }
 header .right {
     float: right;
     font-size: 1.5rem;
-    line-height: 4.5rem;
+    line-height: 6.5rem;
     margin-right: 2rem;
 }
 header .right a {
     color: #fff;
     opacity: 0.5;
-    margin: 0 .3rem;
+    margin: 0 .5rem;
 }
 header .right a:hover {
     opacity: 1;
+    transition: .2s all;
 }
 
 /* Main Frame */
 section {
     width: 100%;
-    height: 46rem;
+    height: 56rem;
     /* background-color: #333; */
     border: 1px solid black;
 }
@@ -54,16 +58,16 @@ section .content {
     min-width: 70rem;
     width: 80%;
     height: 100%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin: 0 auto;
+    background-color: #333;
 }
 
 .content .content-left {
     width: 66%;
-    height: 100%;
+    height: 56rem;
     float: left;
     /* border: 1px solid red; */
-    background-color: #333;
 }
 .content .content-left .toolbar {
     width: 100%;
@@ -101,8 +105,16 @@ section .content {
     opacity: 0.8;
 }
 
+/* Objects */
+.option {
+    background-color: #fff;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
 .content-left .content-list ul{
-    height: 36rem;
+    height: 46rem;
     overflow: auto;
     position: relative;
 }
@@ -197,8 +209,101 @@ section .content .content-right {
     width: 34%;
     height: 100%;
     float: right;
-    background-color: #777;
+    color: #aaa;
+    background-color: #333;
+    position: relative;
 }
+.content-right .song-info-container {
+    width: 100%;
+    margin: 7rem auto 2rem;
+    padding-top: 2rem;
+}
+
+.content-right .song-info-container .song-bg {
+    width: 16rem;
+    height: 15rem;
+    background-color: #222;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+}
+.song-info-container .song-bg a {
+    display: inline-block;
+    width: 85%;
+    height: 100%;
+    box-shadow: 0 .5rem 2rem #333;
+    overflow: hidden;
+}
+.song-info-container .song-bg a .song-img{
+    width: 100%;
+    height: 100%;
+    background: url(../images/song-img.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.song-info-container .song-bg a:hover {
+    box-shadow: 0 .5rem 2rem #111;
+    transition: .2s ease-in-out;
+}
+.song-info-container .song-bg a:hover .song-img{
+    background-size: 105% 105%;
+    transition: .2s ease-in-out;
+}
+
+.song-info-container .song-info {
+    width: 15rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+.song-info-container .song-info li {
+    display: inline-block;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.song-info-container .song-info li a {
+    color: #aaa;
+}
+.song-info-container .song-info li a:hover {
+    color: #ccc;
+    transition: .2s all;
+}
+
+.song-lyric-container {
+    width: 100%;
+    height: 4.4rem;
+    /* background-color: #fff; */
+    overflow: hidden;
+}
+.song-lyric-container ul.lyric-list {
+    width: 16rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.song-lyric-container ul.lyric-list li.lyric-item {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+}
+.lyric-item:hover{
+    color: #ccc;
+    font-weight: 500;
+    transition: .2s all;
+}
+.current-lyric {
+    color: rgba(0, 255, 0, 0.5);
+    font-weight: 500;
+}
+.current-lyric:hover {
+    color: rgba(0, 255, 0, 0.7);
+    transition: .2s all;
+}
+
+
+
+
+
 
 
 footer {
@@ -206,21 +311,36 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 6rem;
-    background-color: #000;
+    height: 7rem;
+    background-color: #555;
 }
 footer .footer-content {
+    min-width: 70rem;
     width: 80%;
     height: 100%;
     border: 1px solid red;
     margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
 }
-
-
-/* Objects */
-.option {
-    background-color: #fff;
+.footer-content .button {
     display: inline-block;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #fff;
 }
+.footer-content .song {
+    width: 25rem;
+    height: 4rem;
+    background-color: #333;
+}
+.footer-content .volume {
+    width: 12rem;
+    height: 4rem;
+    background-color: #333;
+}
+
+
