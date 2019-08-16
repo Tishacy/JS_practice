@@ -25,7 +25,7 @@ header .logo {
     color: #fff;
     background: url(../images/qq-music-logo.png) no-repeat ;
     background-size: contain;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 header .logo:hover {
     opacity: .8;
