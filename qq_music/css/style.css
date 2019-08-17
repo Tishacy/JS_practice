@@ -9,12 +9,13 @@ html, body {
     height: 100%;
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    background: #333;
+    background: #1c1c1d;
     transition: .2s ease-in-out;
+    overflow-x: hidden;
 }
 header {
     width: 100%;
-    height: 6.5rem;
+    height: 8rem;
 }
 header .logo {
     float: left;
@@ -50,29 +51,31 @@ header .right a:hover {
 /* Main Frame */
 section {
     width: 100%;
-    height: 56rem;
+    height: 50%;
     /* background-color: #333; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 section .content {
-    min-width: 70rem;
+    min-width: 110rem;
     width: 80%;
     height: 100%;
     /* border: 1px solid green; */
     margin: 0 auto;
-    background-color: #333;
+    padding: 0 5rem;
+    background-color: #1c1c1d;
 }
 
 .content .content-left {
-    width: 66%;
-    height: 56rem;
+    width: 58%;
+    height: 100%;
     float: left;
     /* border: 1px solid red; */
 }
 .content .content-left .toolbar {
     width: 100%;
-    height: 5rem;
-    background-color: #222;
+    height: 6rem;
+    /* background-color: #222; */
+    background-color: #1c1c1d;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -86,17 +89,18 @@ section .content {
 }
 .toolbar .button span {
     font-size: 1.3rem;
-    line-height: 3rem;
+    line-height: 3.5rem;
     opacity: 0.5;
 }
 .toolbar .button .icon {
     display: inline-block;
     vertical-align: middle;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
     margin-top: -.5rem;
     margin-right: .3rem;
-    background-color: #fff;
+    vertical-align: -.3rem;
+    background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png) 1x,url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png) 2x);
 }
 .toolbar .button:hover {
     border-color: rgba(255,255,255,0.5);
@@ -104,35 +108,47 @@ section .content {
 .toolbar .button:hover span {
     opacity: 0.8;
 }
-
-/* Objects */
-.option {
-    background-color: #fff;
-    display: inline-block;
-    width: 1.6rem;
-    height: 1.6rem;
+.toolbar .button.collect .icon {
+    background-position: -60px -20px;
+}
+.toolbar .button.add .icon {
+    background-position: -20px -20px;
+}
+.toolbar .button.download .icon {
+    background-position: -40px -240px;
+}
+.toolbar .button.delete .icon {
+    background-position: -100px -20px;
+}
+.toolbar .button.clear .icon {
+    background-position: -40px -300px;
 }
 
+.content-left .content-list {
+    height: 100%;
+}
+.content-left .content-list div.list-title {
+    /* background-color: #1c1c1d; */
+    width: 96%;
+}
 .content-left .content-list ul{
-    height: 46rem;
+    /* height: 40rem; */
+    height: 100%;
     overflow: auto;
     position: relative;
 }
-.content-left .content-list ul .list-title {
-    background-color: #222;
-}
-.content-left .content-list ul li:nth-child(2n-1) {
-    background-color: #222;
-}
-.content-left .content-list ul li.hovered {
+/* .content-left .content-list ul li:nth-child(2n-1) {
+    background-color: #242425;
+} */
+/* .content-left .content-list ul li.hovered {
     background-color: #111;
-}
+} */
 
 .content-left .content-list .content-item {
     width: 100%;
     height: 5rem;
     font-size: 1.6rem;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     box-sizing: border-box;
     user-select: none;
 }
@@ -145,10 +161,13 @@ section .content {
 }
 
 .content-item .item-check {
-    width: 5rem;
+    width: 7rem;
     height: 100%;
     /* background-color: #000; */
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .content-item .item-check i{
     display: inline-block;
@@ -158,7 +177,7 @@ section .content {
     cursor: pointer;
     font-size: 1.2rem;
     font-style: normal;
-    line-height: 1.3rem;
+    line-height: 1.5rem;
 }
 .content-item .item-check i:hover{
     border-color: #fff;
@@ -179,10 +198,13 @@ section .content {
     position: relative;
 }
 .content-item .item-name .item-menu {
-    min-width: 5rem;
+    min-width: 8rem;
     padding-right: 1.4rem;
     position: absolute;
     right: 0;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
 }
 
 .content-item .item-name span {
@@ -202,36 +224,57 @@ section .content {
     position: relative;
     padding: 0 .5rem;
 }
-
+/* Objects */
+.option {
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    color: #aaa;
+}
+.music-item.playing .item-number {
+    background: url(https://y.gtimg.cn/mediastyle/yqq/img/wave.gif?max_age=2592000&v=78979d47cc7dc55cab5d36b4c96168d5) 0 0 no-repeat;
+    background-position: 0 2rem;
+    text-indent: -99px;
+    overflow: hidden;
+}
 
 
 section .content .content-right {
-    width: 34%;
+    width: 42%;
     height: 100%;
     float: right;
     color: #aaa;
-    background-color: #333;
+    background-color: #1c1c1d;
     position: relative;
 }
 .content-right .song-info-container {
     width: 100%;
-    margin: 7rem auto 2rem;
+    margin: 2rem 0rem 2rem;
     padding-top: 2rem;
+    text-align: center;
 }
 
 .content-right .song-info-container .song-bg {
     width: 16rem;
-    height: 15rem;
-    background-color: #222;
-    margin: 0 auto 2rem;
+    height: 16rem;
+    background-color: #444;
+    margin: 0 9rem 5rem auto;
     border-radius: 50%;
+    position: relative;
+    right: -2rem;
 }
 .song-info-container .song-bg a {
     display: inline-block;
-    width: 85%;
-    height: 100%;
+    width: 20rem;
+    height: 20rem;
     box-shadow: 0 .5rem 2rem #333;
     overflow: hidden;
+    position: absolute;
+    left: -6rem;
+    top: 50%;
+    margin-top: -10rem;
 }
 .song-info-container .song-bg a .song-img{
     width: 100%;
@@ -250,8 +293,8 @@ section .content .content-right {
 }
 
 .song-info-container .song-info {
-    width: 15rem;
-    margin: 0 auto;
+    width: 20rem;
+    margin: 0 9rem 0 auto;
     padding-bottom: 2rem;
 }
 .song-info-container .song-info li {
@@ -277,8 +320,8 @@ section .content .content-right {
     overflow: hidden;
 }
 .song-lyric-container ul.lyric-list {
-    width: 16rem;
-    margin: 0 auto;
+    width: 20rem;
+    margin: 0 9rem 0 auto;
     text-align: center;
 }
 .song-lyric-container ul.lyric-list li.lyric-item {
@@ -303,23 +346,21 @@ section .content .content-right {
 
 
 
-
-
-
 footer {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 7rem;
-    background-color: #555;
+    height: 12rem;
+    background-color: #1c1c1d;
 }
 footer .footer-content {
-    min-width: 70rem;
-    width: 80%;
+    min-width: 95rem;
+    width: 90%;
     height: 100%;
-    border: 1px solid red;
+    border: 1px solid #1c1c1d;
     margin: 0 auto;
+    padding: 0 5rem;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -328,19 +369,138 @@ footer .footer-content {
 }
 .footer-content .button {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    background: url(../images/play.png) no-repeat 0 0;
+    background-size: 570%;
+    opacity: .8;
+}
+.footer-content .button:hover {
+    opacity: 1;
+    transition: .2s all;
+}
+.footer-content .button.pre {
+    width: 1.9rem;
+    height: 1.8rem;
+    background-position: 0 -2.4rem;    
+}
+.footer-content .button.play {
+    width: 2.3rem;
+    height: 2.9rem;
+    background-position: 0 0;
+}
+.footer-content .button.next {
+    width: 1.9rem;
+    height: 1.8rem;
+    background-position: 0 -4.2rem;
+}
+.footer-content .button.playmod {
+    width: 1.9rem;
+    height: 1.8rem;
+    background-position: -0rem -14.8rem;
+    background-color: #000;
+    background-size: 500%;
+}
+.footer-content .button.like {
+    width: 1.9rem;
+    height: 1.8rem;
+    background-position: 0 -7.8rem;
+}
+.footer-content .button.download {
+    width: 1.9rem;
+    height: 1.8rem;
+    background-position: 0 -9.8rem;
+}
+.footer-content .button.comment {
+    width: 1.9rem;
+    height: 1.8rem;
+    background-position: 0 -32.9rem;
+}
+
+.footer-content .music {
+    /* min-width: 20%; */
+    width: 50%;
+    height: 5rem;
+    /* background-color: #333; */
+}
+.footer-content .music .music-info {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: .6rem;
+}
+.music-info .music-progress-name {
+    display: inline-block;
+    float: left;
+    color: #fff;
+    line-height: 3rem;
+}
+.music-info .music-progress-name a {
+    color: #fff;
+    font-size: 1.4rem;
+    opacity: 0.5
+}
+.music-info .music-progress-name a:hover {
+    opacity: 0.8;
+    font-weight: 600;
+    transition: .2s all;
+}
+.music-info .music-progress-name i {
+    color: #fff;
+    font-size: 1.8rem;
+    padding: 0 .2rem;
+    opacity: 0.5;
+}
+.music-info .music-progress-time {
+    display: inline-block;
+    float: right;
+    opacity: 0.5;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 3rem;
+}
+
+.footer-content .music .music-progress-bar {
+    width: 100%;
+    height: .1rem;
+    background-color: #ffffff85;
+}
+
+
+
+.footer-content .volume {
+    width: 10%;
+    height: 2.9rem;
+    position: relative;
+}
+.volume .volume-icon {
+    display: inline-block;
+    width: 2.4rem;
+    height: 100%;
+    background: url(../images/play.png) no-repeat 0 0;
+    background-position: 0 -14.0rem;
+    background-size: 547%;
+    opacity: 0.8;
+}
+.volume .volume-icon:hover {
+    opacity: 1;
+}
+.volume .volume-bar {
+    height: .1rem;
+    background-color: #ffffff85;
+    margin-left: 3rem;
+    margin-top: -1.8rem;
+}
+.music-progress-bar .progress-line,
+.volume-bar .volume-line {
+    width: 70%;
+    height: 100%;
     background-color: #fff;
 }
-.footer-content .song {
-    width: 25rem;
-    height: 4rem;
-    background-color: #333;
+.music-progress-bar .progress-dot,
+.volume-bar .volume-dot {
+    float: right;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    margin-top: -.5rem;
+    cursor: pointer;
 }
-.footer-content .volume {
-    width: 12rem;
-    height: 4rem;
-    background-color: #333;
-}
-
-

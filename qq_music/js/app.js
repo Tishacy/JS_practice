@@ -22,11 +22,11 @@ $('.list-title .item-check i').click(function () {
 
 // 滚动
 $('.content-list ul').mCustomScrollbar({
+    alwaysShowScrollbar: 1,
     callbacks: {
-        onOverflowY: function () {
-            $("div.list-title").show();
-            $("li.list-title ").hide();
-        },
+        // onOverflowY: function () {
+        //     $("div.list-title").show();
+        // },
     }
 });
 
@@ -34,11 +34,12 @@ $('.content-list ul').mCustomScrollbar({
 $('.delete').click(function () {
     $(this).parents('.music-item').remove();
 })
-$('.toolbar .delete-selected').click(function () {
+$('.toolbar .delete').click(function () {
     $('.item-check .checked').parents('.music-item').remove();
+    $('.list-title .item-check i').removeClass('checked');
 })
 
 // 清空列表
-$('.toolbar .clear-all').click(function () {
+$('.toolbar .clear').click(function () {
     $('.music-item').remove();
 })
