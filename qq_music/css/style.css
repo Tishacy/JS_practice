@@ -8,18 +8,21 @@ html, body {
     width: 100%;
     height: 100%;
     font-size: 10px;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: poppin, Tahoma, Arial, \5FAE\8F6F\96C5\9ED1, sans-serif;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Poppins', Tahoma, Arial, \5FAE\8F6F\96C5\9ED1, sans-serif;
     background: #1c1c1d;
     transition: .2s ease-in-out;
     overflow-x: hidden;
     position: relative;
     z-index: -2;
 }
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .bg {
-    background: url(../images/song-img.png) no-repeat 0 0;
+    background: url(../images/default.png) no-repeat 0 0;
     background-size: 150% 150%;
     position: absolute;
     width: 100%;
@@ -46,10 +49,10 @@ header .logo {
     line-height: 8rem;
     margin-left: 2rem;
     padding-left: 8rem;
-    color: #fff;
+    color: rgba(255,255,255);
+    opacity: 0.5;
     background: url(../images/qq-music-logo.png) no-repeat ;
     background-size: contain;
-    opacity: 0.4;
 }
 header .logo img {
     width: 7.8rem;
@@ -66,8 +69,7 @@ header .right {
     margin-right: 2rem;
 }
 header .right a {
-    color: #fff;
-    opacity: 0.5;
+    /* color: rgba(255,255,255,0.8); */
     margin: 0 .5rem;
 }
 header .right a:hover {
@@ -109,15 +111,14 @@ section .content {
 }
 .toolbar .button {
     width: 18%;
-    border: 1px solid #777;
+    border: 1px solid #aaa;
     text-align: center;
-    color: #fff;
+    /* color: rgba(255,255,255,0.8); */
     cursor: pointer;
 }
 .toolbar .button span {
     font-size: 1.3rem;
     line-height: 3.5rem;
-    opacity: 0.5;
 }
 .toolbar .button .icon {
     display: inline-block;
@@ -130,7 +131,7 @@ section .content {
     background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png) 1x,url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png) 2x);
 }
 .toolbar .button:hover {
-    border-color: rgba(255,255,255,0.5);
+    /* border-color: rgba(255,255,255,0.8); */
 }
 .toolbar .button:hover span {
     opacity: 0.8;
@@ -173,7 +174,7 @@ section .content {
 .content-left .content-list .content-item {
     width: 100%;
     height: 5rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     box-sizing: border-box;
     user-select: none;
@@ -181,9 +182,9 @@ section .content {
 
 .content-left .content-list .content-item div.sub-item{
     float: left;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 5rem;
-    opacity: 0.5;
+    /* opacity: 0.5; */
 }
 
 .content-item .item-check {
@@ -246,6 +247,12 @@ section .content {
     height: 100%;
     /* background-color: #333; */
 }
+.content-item .item-singer .singer {
+    /* color: rgba(255,255,255,0.8); */
+}
+.content-item .item-singer .singer:hover {
+    color: #fff;
+}
 .content-item .item-time {
     position: relative;
     padding: 0 .5rem;
@@ -255,10 +262,20 @@ section .content {
     display: inline-block;
     width: 1.8rem;
     height: 1.8rem;
-    font-size: 1.8rem;
+    padding: .5rem;
+    margin: 0 .2rem;
+    font-size: 1.4rem;
     line-height: 1.8rem;
-    color: #aaa;
+    text-align: center;
+    /* color: rgba(255,255,255,0.8); */
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
 }
+.option:hover {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
 .music-item.playing .item-number {
     background: url(https://y.gtimg.cn/mediastyle/yqq/img/wave.gif?max_age=2592000&v=78979d47cc7dc55cab5d36b4c96168d5) 0 0 no-repeat;
     background-position: 0 2rem;
@@ -271,7 +288,7 @@ section .content .content-right {
     width: 42%;
     height: 100%;
     float: right;
-    color: #aaa;
+    /* color: #aaa; */
     /* background-color: #1c1c1d; */
     position: relative;
 }
@@ -285,9 +302,9 @@ section .content .content-right {
 .content-right .song-info-container .song-bg {
     width: 16rem;
     height: 16rem;
-    background-color: #444;
     margin: 0 9rem 5rem auto;
-    border-radius: 50%;
+    background: url(../images/album_bg.png) 0 0 no-repeat;
+    background-size: contain;
     position: relative;
     right: -2rem;
 }
@@ -295,7 +312,8 @@ section .content .content-right {
     display: inline-block;
     width: 20rem;
     height: 20rem;
-    box-shadow: 0 .5rem 2.5rem #333;
+    box-shadow: 0 .5rem 2.5rem #111;
+    background-color: #181819;
     overflow: hidden;
     position: absolute;
     left: -6rem;
@@ -305,12 +323,12 @@ section .content .content-right {
 .song-info-container .song-bg a .song-img{
     width: 100%;
     height: 100%;
-    background: url(../images/song-img.png) no-repeat;
+    background: url(../images/default.png) 0 0 no-repeat;
     background-size: 100% 100%;
     background-position: center;
 }
 .song-info-container .song-bg a:hover {
-    box-shadow: 0 .5rem 4rem #222;
+    box-shadow: 0 .5rem 4rem #050505;
     transition: .2s ease-in-out;
 }
 .song-info-container .song-bg a:hover .song-img{
@@ -324,18 +342,18 @@ section .content .content-right {
     padding-bottom: 2rem;
 }
 .song-info-container .song-info li {
-    display: inline-block;
-    font-size: 1.3rem;
+    display: block;
+    font-size: 1.4rem;
     line-height: 2.2rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .song-info-container .song-info li a {
-    color: #aaa;
+    /* color: rgba(255,255,255,0.8); */
 }
 .song-info-container .song-info li a:hover {
-    color: #ccc;
+    color: #fff;
     transition: .2s all;
 }
 
@@ -349,6 +367,7 @@ section .content .content-right {
     width: 20rem;
     margin: 0 9rem 0 auto;
     text-align: center;
+    cursor: -webkit-grab;
 }
 .song-lyric-container ul.lyric-list li.lyric-item {
     display: block;
@@ -356,17 +375,14 @@ section .content .content-right {
     line-height: 2.2rem;
 }
 .lyric-item:hover{
-    color: #ccc;
+    color: #fff;
     font-weight: 500;
     transition: .2s all;
 }
-.current-lyric {
-    color: rgba(0, 255, 0, 0.5);
-    font-weight: 500;
-}
+.current-lyric,
 .current-lyric:hover {
-    color: rgba(0, 255, 0, 0.7);
-    transition: .2s all;
+    color: #31c27c;
+    font-weight: 500;
 }
 
 
@@ -411,7 +427,13 @@ footer .footer-content {
     width: 2.3rem;
     height: 2.9rem;
     background-position: 0 0;
+    transition: 0s all;
 }
+.footer-content .button.play.playing {
+    background-position: -2.8rem 0;
+    transition: 0s all;
+}
+
 .footer-content .button.next {
     width: 1.9rem;
     height: 1.8rem;
@@ -459,7 +481,7 @@ footer .footer-content {
 .music-info .music-progress-name a {
     color: #fff;
     font-size: 1.4rem;
-    opacity: 0.5
+    opacity: 0.8
 }
 .music-info .music-progress-name a:hover {
     opacity: 1;
@@ -470,12 +492,12 @@ footer .footer-content {
     color: #fff;
     font-size: 1.8rem;
     padding: 0 .2rem;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 .music-info .music-progress-time {
     display: inline-block;
     float: right;
-    opacity: 0.5;
+    opacity: 0.8;
     color: #fff;
     font-size: 1.4rem;
     line-height: 3rem;
@@ -512,13 +534,26 @@ footer .footer-content {
     margin-left: 3rem;
     margin-top: -1.8rem;
 }
+
+.music-progress-bar .progress-load {
+    height: .1rem;
+    background-color: #ffffffaa;
+    /* width: 50%; */
+}
+
 .music-progress-bar .progress-line,
 .volume-bar .volume-line {
-    width: 70%;
     height: .2rem;
     background-color: #fff;
     margin-top: -.2rem;
 }
+.music-progress-bar .progress-line {
+    width: 0%;
+}
+.volume-bar .volume-line {
+    width: 50%;
+}
+
 .music-progress-bar .progress-dot,
 .volume-bar .volume-dot {
     float: right;

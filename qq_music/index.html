@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="mobile-agent" content="format==[html5];url=https://y.qq.com/m/index.html">
     <title>QQ音乐</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.min.css">
 </head>
@@ -55,7 +56,7 @@
                         <div class="item-time sub-item">时长</div>
                     </div>
                     <ul class="mCustomScrollbar" data-mcs-theme="minimal">
-                        <li class="content-item music-item playing">
+                        <!-- <li class="content-item music-item playing">
                             <div class="item-check sub-item"><i> </i></div>
                             <div class="item-number sub-item">1</div>
                             <div class="item-name sub-item">
@@ -234,7 +235,7 @@
                                 <a href="javascript:;" class="option delete" title="删除" style="display: none;">✕</a>
                                 <span>03:18</span>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -247,16 +248,15 @@
                         </a>
                     </div>
                     <ul class="song-info">
-                        <li>歌曲名：<a href="javascript:;">不仅仅是喜欢</a></li>
-                        <li>歌手名：<a href="javascript:;">萧全</a></li>
-                        <li>专辑名：<a href="javascript:;">不仅仅是喜欢</a></li>
+                        <li>歌曲名：<a href="javascript:;" class="name">- -</a></li>
+                        <li>歌手名：<a href="javascript:;" class="singer">- -</a></li>
+                        <li>专辑名：<a href="javascript:;" class="album">- -</a></li>
                     </ul>
                 </div>
                 <div class="song-lyric-container">
                     <ul class="lyric-list">
-                        <li class="lyric-item">第一句歌词歌词歌词歌词</li>
-                        <li class="lyric-item current-lyric">第二句歌词</li>
-                        <li class="lyric-item">第三句歌词</li>
+                        <li class="lyric-item current-lyric"></li>
+                        <li class="lyric-item"></li>
                     </ul>
                 </div>
             </div>
@@ -270,13 +270,18 @@
             <div class="music">
                 <div class="music-info">
                     <span class="music-progress-name">
-                        <a href="javascript:;" class="music-name">不仅仅是喜欢</a>
+                        <a href="javascript:;" class="music-name"></a>
                         <i> - </i>
-                        <a href="javascript:;" class="author">萧全</a>
+                        <a href="javascript:;" class="music-singer"></a>
                     </span>
-                    <span class="music-progress-time">04:31 / 05:13</span>
+                    <span class="music-progress-time">
+                        <span class="currentTime">00:00</span>
+                        <i> / </i>
+                        <span class="totalTime">00:00</span>
+                    </span>
                 </div>
                 <div class="music-progress-bar">
+                    <div class="progress-load"></div>
                     <div class="progress-line">
                         <div class="progress-dot"></div>
                     </div>
