@@ -17,7 +17,21 @@ $('.music-item .item-check i').click(function () {
 })
 
 $('.list-title .item-check i').click(function () {
-    $('.content-item .item-check i').toggleClass('checked');
+    let itemCheckList = $('.content-item .item-check i'),
+        len = itemCheckList.length,
+        existEmpty = false;
+    for (let i=0; i<len; i++) {
+        let itemCheck = $(itemCheckList[i]);
+        if (!itemCheck.hasClass('checked')) {
+            existEmpty = true;
+            break;
+        }
+    }
+    if (existEmpty) {
+        itemCheckList.addClass("checked");
+    }else {
+        itemCheckList.removeClass("checked");
+    }
 })
 
 // 滚动

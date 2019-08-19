@@ -14,6 +14,7 @@ html, body {
     transition: .2s ease-in-out;
     overflow-x: hidden;
     position: relative;
+    z-index: -2;
 }
 
 
@@ -24,6 +25,7 @@ html, body {
     width: 100%;
     height: 100%;
     filter: blur(7rem);
+    z-index: -1;
 }
 .bg_mask {
     position: absolute;
@@ -31,6 +33,7 @@ html, body {
     height: 100%;
     background-color: #000;
     opacity: 0.4;
+    z-index: -1;
 }
 
 header {
@@ -106,7 +109,7 @@ section .content {
 }
 .toolbar .button {
     width: 18%;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid #777;
     text-align: center;
     color: #fff;
     cursor: pointer;
@@ -512,8 +515,9 @@ footer .footer-content {
 .music-progress-bar .progress-line,
 .volume-bar .volume-line {
     width: 70%;
-    height: 100%;
+    height: .2rem;
     background-color: #fff;
+    margin-top: -.2rem;
 }
 .music-progress-bar .progress-dot,
 .volume-bar .volume-dot {
