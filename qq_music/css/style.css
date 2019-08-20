@@ -10,11 +10,12 @@ html, body {
     font-size: 10px;
     color: rgba(255,255,255,0.8);
     font-family: 'Poppins', Tahoma, Arial, \5FAE\8F6F\96C5\9ED1, sans-serif;
-    background: #1c1c1d;
+    background: #707075;
     transition: .2s ease-in-out;
     overflow-x: hidden;
     position: relative;
     z-index: -2;
+    opacity: .9;
 }
 a {
     text-decoration: none;
@@ -22,20 +23,21 @@ a {
 }
 
 .bg {
-    background: url(../images/default.png) no-repeat 0 0;
-    background-size: 150% 150%;
+    background: url(../images/default.png) no-repeat;
+    background-size: cover;
+    background-position: 50%;
     position: absolute;
     width: 100%;
     height: 100%;
-    filter: blur(7rem);
+    filter: blur(6.5rem);
     z-index: -1;
 }
 .bg_mask {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #000;
-    opacity: 0.4;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0.9;
     z-index: -1;
 }
 
@@ -69,11 +71,11 @@ header .right {
     margin-right: 2rem;
 }
 header .right a {
-    /* color: rgba(255,255,255,0.8); */
+    color: rgba(255,255,255,0.3);
     margin: 0 .5rem;
 }
 header .right a:hover {
-    opacity: 1;
+    color: rgba(255, 255, 255, 0.8);
     transition: .2s all;
 }
 
@@ -111,7 +113,7 @@ section .content {
 }
 .toolbar .button {
     width: 18%;
-    border: 1px solid #aaa;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
     /* color: rgba(255,255,255,0.8); */
     cursor: pointer;
@@ -160,7 +162,7 @@ section .content {
 }
 .content-left .content-list ul{
     /* height: 40rem; */
-    height: 100%;
+    height: 96%;
     overflow: auto;
     position: relative;
 }
@@ -200,7 +202,7 @@ section .content {
     display: inline-block;
     width: 1.3rem;
     height: 1.3rem;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,.35);
     cursor: pointer;
     font-size: 1.2rem;
     font-style: normal;
@@ -344,7 +346,7 @@ section .content .content-right {
 .song-info-container .song-info li {
     display: block;
     font-size: 1.4rem;
-    line-height: 2.2rem;
+    line-height: 3rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -418,7 +420,7 @@ footer .footer-content {
     opacity: 1;
     transition: .2s all;
 }
-.footer-content .button.pre {
+.footer-content .button.prev {
     width: 1.9rem;
     height: 1.8rem;
     background-position: 0 -2.4rem;    
@@ -473,7 +475,7 @@ footer .footer-content {
     margin-bottom: .6rem;
 }
 .music-info .music-progress-name {
-    display: inline-block;
+    /* display: inline-block; */
     float: left;
     color: #fff;
     line-height: 3rem;
@@ -495,7 +497,7 @@ footer .footer-content {
     opacity: 0.8;
 }
 .music-info .music-progress-time {
-    display: inline-block;
+    /* display: inline-block; */
     float: right;
     opacity: 0.8;
     color: #fff;

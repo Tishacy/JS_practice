@@ -46,18 +46,31 @@ $('.content-list ul').mCustomScrollbar({
     }
 });
 
+// 更新音乐序号
+function updateMusicNumber() {
+    $musicList = $('.music-item');
+    for (let i=0; i<$musicList.length; i++) {
+        console.log($musicList);
+        $musicList.eq(i).find('.item-number').text(i+1);
+    }
+}
+
 // 删除音乐
 $('.content-list').delegate('.delete', "click", function () {
-    let musicItem = $(this).parents('.music-item');
-    if (musicItem.hasClass("playing")) {
-        stopMusic(musicItem);
-        playMusic(musicItem.next());
+    let $musicItem = $(this).parents('.music-item'),
+        $musicList = $('.music-item'),
+        itemNumber = parseInt($musicItem.find('.item-number').text());
+    if ($musicItem.hasClass("playing")) {
+        stopMusic($musicItem);
+        playMusic($musicItem.next());
     }
-    $(this).parents('.music-item').remove();
+    $musicItem.remove();
+    updateMusicNumber();
 });
 $('.toolbar .delete').click(function () {
     $('.item-check .checked').parents('.music-item').remove();
     $('.list-title .item-check i').removeClass('checked');
+    updateMusicNumber();
 })
 
 // 清空列表
@@ -65,9 +78,6 @@ $('.toolbar .clear').click(function () {
     $('.music-item').remove();
 })
 
-// 加载歌曲
-var musicList;
-getPlayerList();
 
 function getPlayerList() {
     return $.ajax({
@@ -196,3 +206,31 @@ $('.footer-content .button.play').click(function () {
         pauseMusic($playingMusic);
     }
 })
+
+// 上一首
+$('.footer-content .button.prev').click(function () {
+    let $playingMusic = $('.music-item.playing'),
+        $playingMusicIndex = parseInt($playingMusic.find('.item-number').text()) - 1;
+    if ($playingMusicIndex == 0) {
+        let $lastMusic = $('.music-item').eq(musicList.length - 1);
+        playMusic($lastMusic);
+    }else {
+        playMusic($playingMusic.prev());
+    }
+})
+
+// 下一首
+$('.footer-content .button.next').click(function () {
+    let $playingMusic = $('.music-item.playing'),
+        $playingMusicIndex = parseInt($playingMusic.find('.item-number').text()) - 1;
+    if ($playingMusicIndex == musicList.length - 1) {
+        let $firstMusic = $('.music-item').eq(0);
+        playMusic($firstMusic);
+    }else {
+        playMusic($playingMusic.next());
+    }
+})
+
+// 加载歌曲
+var musicList;
+getPlayerList();
