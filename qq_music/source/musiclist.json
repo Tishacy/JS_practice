@@ -4,7 +4,7 @@
         "singer": "周深",
         "album": "大鱼",
         "time": "05:13",
-        "link_url": "./source/dayu.ma4",
+        "link_url": "./source/dayu.m4a",
         "cover": "./source/dayu.jpg",
         "link_lyric": "./source/dayu.txt"
     },
@@ -13,7 +13,7 @@
         "singer": "阿南亮子",
         "album": "Refrain",
         "time": "08:52",
-        "link_url": "./source/refrain.mp3",
+        "link_url": "./source/refrain.m4a",
         "cover": "./source/refrain.jpg",
         "link_lyric": "./source/refrain.txt"
     },
@@ -22,7 +22,7 @@
         "singer": "阿南亮子",
         "album": "Refrain",
         "time": "08:52",
-        "link_url": "./source/refrain.mp3",
+        "link_url": "./source/refrain.m4a",
         "cover": "./source/refrain.jpg",
         "link_lyric": "./source/refrain.txt"
     },
@@ -31,7 +31,7 @@
         "singer": "阿南亮子",
         "album": "Refrain",
         "time": "08:52",
-        "link_url": "./source/refrain.mp3",
+        "link_url": "./source/refrain.m4a",
         "cover": "./source/refrain.jpg",
         "link_lyric": "./source/refrain.txt"
     },
@@ -40,7 +40,7 @@
         "singer": "阿南亮子",
         "album": "Refrain",
         "time": "08:52",
-        "link_url": "./source/refrain.mp3",
+        "link_url": "./source/refrain.m4a",
         "cover": "./source/refrain.jpg",
         "link_lyric": "./source/refrain.txt"
     },
@@ -49,7 +49,7 @@
         "singer": "阿南亮子",
         "album": "Refrain",
         "time": "08:52",
-        "link_url": "./source/refrain.mp3",
+        "link_url": "./source/refrain.m4a",
         "cover": "./source/refrain.jpg",
         "link_lyric": "./source/refrain.txt"
     },
@@ -58,7 +58,7 @@
         "singer": "阿南亮子",
         "album": "Refrain",
         "time": "08:52",
-        "link_url": "./source/refrain.mp3",
+        "link_url": "./source/refrain.m4a",
         "cover": "./source/refrain.jpg",
         "link_lyric": "./source/refrain.txt"
     },
@@ -67,7 +67,7 @@
         "singer": "阿南亮子",
         "album": "Refrain",
         "time": "08:52",
-        "link_url": "./source/refrain.mp3",
+        "link_url": "./source/refrain.m4a",
         "cover": "./source/refrain.jpg",
         "link_lyric": "./source/refrain.txt"
     }

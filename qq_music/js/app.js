@@ -61,21 +61,24 @@ $('.content-list').delegate('.delete', "click", function () {
         $musicList = $('.music-item'),
         itemNumber = parseInt($musicItem.find('.item-number').text());
     if ($musicItem.hasClass("playing")) {
-        stopMusic($musicItem);
+        pauseMusic($musicItem);
         playMusic($musicItem.next());
     }
     $musicItem.remove();
     updateMusicNumber();
+    musicList.splice(itemNumber-1, 1);
 });
 $('.toolbar .delete').click(function () {
     $('.item-check .checked').parents('.music-item').remove();
     $('.list-title .item-check i').removeClass('checked');
     updateMusicNumber();
+    musicList.splice(itemNumber-1, 1);
 })
 
 // 清空列表
 $('.toolbar .clear').click(function () {
     $('.music-item').remove();
+    musicList = [];
 })
 
 
@@ -91,6 +94,7 @@ function getPlayerList() {
                     $musicItem = createMusicItem(i, musicItem);
                 $musicList.append($musicItem);
             }
+            $('audio').attr('src', data[0].link_url);
         },
         error: function (e) {
             console.log(e);
@@ -123,16 +127,20 @@ function createMusicItem(index, elem) {
 }
 
 
+
 // 播放音乐
-function playMusic($musicItem) {
+function playMusic($musicItem, fromStart=true) {
     let musicIndex = parseInt($musicItem.find('.item-number').text())-1,
+        currentMusicIndex = musicIndex,
         musicItem = musicList[musicIndex];
         musicName = musicItem.name;
         musicSinger = musicItem.singer,
         musicTime = musicItem.time,
         musicCover = musicItem.cover,
-        musicAlbum = musicItem.album;
-
+        musicAlbum = musicItem.album,
+        musicLink = musicItem.link_url,
+        $audio = $('audio');
+        
     // 音乐项中的变化
     $musicItem.find('.option.play').text("Ⅱ");
     $musicItem.addClass("playing");
@@ -157,12 +165,20 @@ function playMusic($musicItem) {
     
     // 背景变化
     $('.bg').css('background-image', `url(${musicCover})`);
+
+    // 播放audio
+    console.log(fromStart);
+    if (fromStart) {
+        $audio.attr('src', musicLink);
+    }
+    $audio.get(0).play();
 }
 // 音乐终止
 function stopMusic($musicItem) {
     $musicItem.find(".option.play").text("▷");
     $musicItem.removeClass("playing");
     $('.footer-content .button.play').removeClass("playing");
+    $('audio').get(0).stop();
 }
 // 音乐暂停
 function pauseMusic($musicItem) {
@@ -170,6 +186,7 @@ function pauseMusic($musicItem) {
     $musicItem.removeClass("playing");
     $musicItem.addClass("paused");
     $('.footer-content .button.play').removeClass("playing");
+    $('audio').get(0).pause();
 }
 
 
@@ -186,20 +203,20 @@ $('.content-list').delegate('.option.play', 'click', function () {
         playMusic($musicItem);
     }else {
         // 暂停音乐
-        stopMusic($musicItem);
+        pauseMusic($musicItem);
     }
 });
 
 // 底部的播放按钮
-$('.footer-content .button.play').click(function () {
+$('.footer-content .button.play').click(function (e) {
     // 播放选中的第一个音乐
     if (!$(this).hasClass("playing")) {
         let $selectedMusic = $('.music-item .item-check i.checked').eq(0).parents('.music-item');
         if ($selectedMusic.length === 0) {
             let $firstMusic = $('.music-item').eq(0);
-            playMusic($firstMusic);
+            playMusic($firstMusic, false);
         }else {
-            playMusic($selectedMusic);
+            playMusic($selectedMusic, false);
         }
     }else {
         let $playingMusic = $('.music-item.playing');
